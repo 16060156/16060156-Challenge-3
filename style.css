@@ -1,0 +1,58 @@
+html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+.hidden {
+	display: none;
+}
+
+body {
+	font-family: 'Miriam Libre', sans-serif;
+}
+
+#container {
+	display: flex;
+	justify-content: center;
+}
+
+#map {
+	width: 50%;
+	height: 90vh;
+	color: #111;
+}
+
+#divRightSide {
+	width: 50%;
+	height: 90;
+	background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+	display: grid;
+}
+
+h1 {
+	text-align: center;
+}
+
+h3 {
+    color: #bb3794;
+}
+a {
+    text-decoration: none; 
+}
+
+a, a:visited {
+    color: rgb(84, 180, 210);
+}
+
+a:hover {
+    color: rgb(51,159,192);
+}
+
+th {
+    text-align: left;
+}
+
+td, th {
+  padding-right: 20px;
+}
