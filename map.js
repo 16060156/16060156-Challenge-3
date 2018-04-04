@@ -1,8 +1,3 @@
-// on page load show map
-document.onload = function() {
-	initMap();
-};
-
 // init map
 var myMap;
 
@@ -59,13 +54,6 @@ var icons = [
 	// 'images/crossfitninjas.png'
 
 function initMap() {
-	var myStyles =[
-	    {
-	        featureType: "poi",
-	        elementType: "labels",
-	        stylers: [{ visibility: "off" }]
-	    }
-	];
 
 	// set options for map 
 	var mapOptions = {
@@ -74,8 +62,8 @@ function initMap() {
 			lng: -355.6761313835413
 		},
 		zoom: 13,
-		clickableIcons: false,
-		styles: myStyles 
+		clickableIcons: true,
+		styles: styledMapType 
 	};
 
 	// Implementatie Google Maps API
@@ -83,29 +71,21 @@ function initMap() {
 
 	for(var i=0; i<fitnessCenters.length; i++){
 		addFitnessCenter(fitnessCenters[i]);
-	}
+	}	
+}
 
-	function addFitnessCenter(fitnessCenter){
+	function addFitnessCenter(fitnessCenter) {
 	new google.maps.Marker({
 		position: fitnessCenter.location,
 		map: myMap,
 		title: fitnessCenter.name + ' ' + fitnessCenter.ranking + '/5',
-		icon: icons[fitnessCenter.ranking]
+		icon: icons[fitnessCenter.ranking],
 	})
 	console.log(fitnessCenter.name + ' added to map');
-}	
 }
 
-// This code depends on jQuery Core and Handlebars.js 
-
-var api_key = '32b02468878f749ac8efca498d7b7a4a'; // Get your API key at developer.betterdoctor.com
-
-var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=37.773,-122.413,100&skip=2&limit=10&user_key=' + api_key;
 
 
 
-$.get(resource_url, function (data) {
-    // data: { meta: {<metadata>}, data: {<array[Practice]>} }
-    var template = Handlebars.compile(document.getElementById('docs-template').innerHTML);
-    document.getElementById('content-placeholder').innerHTML = template(data);
-});
+
+
