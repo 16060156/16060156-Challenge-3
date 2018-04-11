@@ -24,7 +24,7 @@ function getAPIdata() {
     var city = "the%20Hague";
 }
 
-fetch("http://api.openweathermap.org/data/2.5/weather?q=the%20hague&appid=b56eb22343437e4b762ed7fafeac5691&units=metric")
+fetch("https://api.openweathermap.org/data/2.5/weather?q=the%20hague&appid=b56eb22343437e4b762ed7fafeac5691&units=metric")
     
     // parse to JSON format 
     .then(function(response) {
