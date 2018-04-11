@@ -19,7 +19,7 @@ setInterval(tijd, 100);
 
 function getAPIdata() {
 
-    var url = "http://api.openweathermap.org/data/2.5/forecast";
+    var url = "https://api.openweathermap.org/data/2.5/forecast";
     var apiKey ="b56eb22343437e4b762ed7fafeac5691";
     var city = "the%20Hague";
 }
